@@ -9,8 +9,8 @@ private:
 	string firstName;
 	string lastName;
 	string email;
-	int age;
-	int yearsOfExperience;
+	unsigned age;
+	unsigned yearsOfExperience;
 	vector<string> skills;
 	float desiredSalary;
 
@@ -20,8 +20,8 @@ public:
 
 	const string& getFirstName() const;
 	const string& getLastName() const;
-	int getAge() const;
-	int getYearsXp() const;
+	unsigned getAge() const;
+	unsigned getYearsXp() const;
 	const vector<string>& getSkills() const;
 	float getDesiredSalary() const;
 	const string& getEmail() const;

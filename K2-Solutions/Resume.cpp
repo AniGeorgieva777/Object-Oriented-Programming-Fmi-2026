@@ -33,12 +33,12 @@ const string& Resume::getLastName() const
 	return lastName;
 }
 
-int Resume::getAge() const
+unsigned Resume::getAge() const
 {
 	return age;
 }
 
-int Resume::getYearsXp() const
+unsigned Resume::getYearsXp() const
 {
 	return yearsOfExperience;
 }

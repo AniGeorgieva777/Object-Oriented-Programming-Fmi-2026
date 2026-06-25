@@ -13,10 +13,10 @@ protected:
 
 public:
 	void add(const T& el);
-	void remove(function<bool(const T&)> pred);
+	void remove(const function<bool(const T&)>& pred);
 
-	vector<T> filter(function<bool(const T&)> pred) const;
-	optional<T> findFirst(function<bool(const T&)> pred) const;
+	vector<T> filter(const function<bool(const T&)>& pred) const;
+	optional<T> findFirst(const function<bool(const T&)>& pred) const;
 
 	int size() const;
 	bool isEmpty() const;
@@ -30,13 +30,13 @@ inline void Pool<T>::add(const T& el)
 }
 
 template<class T>
-inline void Pool<T>::remove(function<bool(const T&)> pred)
+inline void Pool<T>::remove(const function<bool(const T&)>& pred)
 {
 	erase_if(data, pred);
 }
 
 template<class T>
-inline vector<T> Pool<T>::filter(function<bool(const T&)> pred) const
+inline vector<T> Pool<T>::filter(const function<bool(const T&)>& pred) const
 {
 	vector<T> res;
 
@@ -50,7 +50,7 @@ inline vector<T> Pool<T>::filter(function<bool(const T&)> pred) const
 }
 
 template<class T>
-inline optional<T> Pool<T>::findFirst(function<bool(const T&)> pred) const
+inline optional<T> Pool<T>::findFirst(const function<bool(const T&)>& pred) const
 {
 	for (const auto& el : data) {
 		if (pred(el)) {
